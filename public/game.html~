@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title> Play ConnectFour! </title> 
+    <link rel="stylesheet" href="" />
+  </head>
+
+  <body>
+    
+    <main>
+      <div class="board">
+      </div>
+    </main>
+
+    <script src=""></script>
+    
+  </body>
+  
+</html>
+
+  
+  
