@@ -1,0 +1,39 @@
+@import "style.css";
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    overflow: hidden;
+}
+
+.backgroundImage {
+    position: absolute;
+    height: 855px;
+    width: 1925px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.columns {
+    position: absolute;
+    margin-left: 642px;
+    
+}
+.column {
+    display: inline-block;
+    margin-right: -4px;  
+    vertical-align: top;
+    margin-top: 155px;
+}
+
+.bubble {
+  margin-top: 20px;
+  margin-right: 42.35Px;
+  height: 55px;
+  width: 55px;
+  background-color: black;
+  border-radius: 50%;
+}
