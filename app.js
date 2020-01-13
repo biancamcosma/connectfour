@@ -9,6 +9,24 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+var serv = require('http').Server(app);
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/public/game.html');
+});
+app.use('/public', express.static(__dirname + '/public'));
+
+serv.listen(3000);
+console.log("Server started");
+
+var io = require('socket.io')(serv, {});
+io.sockets.on('connection', function(socket) {
+    console.log('socket connection');
+    
+    socket.on('happy', function(data) {
+        console.log('happy' + data.number);
+    });
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
