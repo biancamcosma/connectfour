@@ -19,19 +19,19 @@ body, html {
 
 .columns {
     position: absolute;
-    margin-left: 642px;
-    
+    margin-left: 630.5px;
 }
 .column {
+    width: 78px;
     display: inline-block;
-    margin-right: -4px;  
+    margin-right: 15.6px;  
     vertical-align: top;
     margin-top: 155px;
 }
 
 .bubble {
   margin-top: 20px;
-  margin-right: 42.35Px;
+  margin-left: 11px;
   height: 55px;
   width: 55px;
   background-color: black;
