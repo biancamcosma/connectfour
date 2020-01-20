@@ -1,0 +1,35 @@
+.button {
+    background-color: yellow;
+    color: green;
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    background-color: yellow;
+    border-radius: 8px;
+    border-color: green;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    margin-left: 10%
+  }
+
+  .button:hover {
+    background-color:green; 
+    color: yellow;
+    border-color: yellow;
+  }
+
+  #logo{
+      height: 400px;
+      position: absolute;
+      margin-left: 30%;
+  }
+
+
+  #visits{
+    color: green;
+    margin-left: 10%;
+    margin-top: 1%
+  }
