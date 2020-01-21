@@ -38,20 +38,57 @@ body, html {
 
 .markerrow {
     display: flex;
-    margin-top: 30px;
-    width: 700px;
+    width: 680px;
     height: 80px;
     background-color: black;
     vertical-align: top;
 }
 
 .marker {
-    margin-left: 11px;
-    margin-right: 32.4px;
-    height: 55px;
-    width: 55px;
-    border-radius: 50%;
-    background-color: lightgreen;
+    background-image: url("../images/green_triangle.svg");
+    height: 60px;
+    width: 80px;
+    margin-right: 30px;
+    margin-left: 8px;
     opacity: 0%;
 }
 
+#whoseTurn {
+    text-align: center;
+    color: black;
+    font-size: 350%;
+    border-radius: 0 0 50% 50%;
+    margin-top: 15px;
+    width: 665px;
+    height: 120px;
+    background-color: whitesmoke;
+}
+
+#whoseTurn::after {
+    content: '';
+    height: 60px;
+    width: 60px; 
+    border-radius: 50%;
+    background-color: yellowgreen;
+    position: absolute;
+    left: 65%;
+    top: 78%;
+}
+
+#whoseTurn::before {
+    content: '';
+    height: 60px;
+    width: 60px; 
+    border-radius: 50%;
+    background-color: gold;
+    position: absolute;
+    left: 30.5%;
+    top: 78%;
+}
+
+#duration {
+    margin-top: -70px;
+    position: absolute;
+    font-size: 300%;
+    color: whitesmoke;
+}
