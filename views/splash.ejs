@@ -8,6 +8,19 @@
         <main>
             <section id="left">
                 <div id="visits"></div>
+                <div id ="stats">
+                    <h3><%= gamesInitialized %> 
+                        <%if (gamesInitialized != 1) { %>
+                            games
+                        <% } else { %>
+                            game
+                        <% } %>initialized
+                    </h3>
+                    <h3>
+                        <%= gamesCompleted %> 
+                        games completed 
+                    </h3>
+                </div>
             </section>
             <section id="right">
                 &nbsp;

@@ -14,13 +14,13 @@ var app = express();
 var cookies = require("cookie-parser");
 
 // view engine setup
-//app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 app.get("/play", indexRouter);
 app.use(express.static(path.join(__dirname, 'public')));
 app.get("/", (req, res) => {
-  res.render("splash.ejs", {});
+  res.render("splash.ejs", { gamesInitialized: gameStatus.gamesInitialized, gamesCompleted: gameStatus.gamesCompleted});
 });
 
 //app.get('/', indexRouter);
