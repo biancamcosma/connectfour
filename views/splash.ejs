@@ -7,30 +7,24 @@
     <body background="" onload="checkCookie()">
         <main>
             <section id="left">
-                <div id="visits"></div>
-                <div id ="stats">
-                <button id="fs-toggle">Toggle Fullscreen</button>
-                    <h3><%= gamesInitialized %> 
-                        <%if (gamesInitialized != 1) { %>
-                            games
-                        <% } else { %>
-                            game
-                        <% } %>initialized
-                    </h3>
-                    <h3>
-                        <%= gamesCompleted %> 
-                        games completed 
-                    </h3>
+                <div id="visits" style="margin-bottom: 100px;"></div>
+            <center>
+                <div style="margin-bottom: 50px;">
+                Games Initialised:
+                <%= gamesInitialized %> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Players Connected:
+                <%= playersConnected %>
                 </div>
+            </center>
             </section>
-            <section id="right">
-                &nbsp;
-            </section>
-            <div id="logo">...Logo...(style with CSS)</div>
-            <div id = "howTo">How to play</div>
+            <div id="logo"> </div>
+            <center>
+            <div id = "howTo" style="margin-bottom: 100px;">How to play</div>
                     <form action="/play" method="get">
                             <button type="play" class="button">Play!</button>
                     </form>
+                </center>
 
 
         </main>
