@@ -1,0 +1,57 @@
+@import "style.css";
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    overflow: hidden;
+    
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.columns {
+    display: block;
+    width: 686px;
+}
+
+.column {
+    width: 78px;
+    height: 480px;
+    display: inline-block;
+    margin-right: 15.6px;  
+    vertical-align: top;
+    margin-top: 0px;
+    background-color: whitesmoke;
+}
+
+.bubble {
+  margin-top: 23px;
+  margin-left: 11px;
+  height: 55px;
+  width: 55px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.markerrow {
+    display: flex;
+    margin-top: 30px;
+    width: 700px;
+    height: 80px;
+    background-color: black;
+    vertical-align: top;
+}
+
+.marker {
+    margin-left: 11px;
+    margin-right: 32.4px;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    background-color: lightgreen;
+    opacity: 0%;
+}
+
