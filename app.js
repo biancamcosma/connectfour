@@ -5,11 +5,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var websocket = require("ws");
-var messages = require("./public/javascripts/messages");
 var indexRouter = require('./routes/index');
 var Game = require("./game");
 var gameStatus = require("./stats");
-var port = 3000;
 var app = express();
 var cookies = require("cookie-parser");
 
@@ -28,6 +26,8 @@ var server = http.createServer(app).listen(process.env.PORT || 3000);
 const wss = new websocket.Server({ server });
 var websockets = {};//property: websocket, value: game
 
+console.log("Server started!");
+
 setInterval(function() {
   for(let i in websockets){
       if(websockets.hasOwnProperty(i)){
@@ -44,9 +44,7 @@ var connectionID = 0;//each websocket receives a unique ID
 var currentGame = new Game(gameStatus.gamesInitialized);
 
 
-wss.on("connection", function connection(ws){
-    var won = false;
-    
+wss.on('connection', function connection(ws){
     let con = ws; 
     con.id = connectionID++;
     let playerType = currentGame.addPlayer(con);
@@ -56,7 +54,6 @@ wss.on("connection", function connection(ws){
      /*
      * inform the client about its assigned player type
      */ 
-    con.send((playerType == "A") ? messages.S_PLAYER_A : messages.S_PLAYER_B);
     
 
     if(currentGame.hasTwoPlayers()){
@@ -64,38 +61,7 @@ wss.on("connection", function connection(ws){
       gameStatus.gamesInitialized++;
     }
 
-    con.on("message", function incoming(message) {
-
-      let oMsg = JSON.parse(message);
-
-      let gameObj = websockets[con.id];
-      let isPlayerA = (gameObj.playerA == con) ? true : false;
-      if(currentGame.hasTwoPlayers()){
-        if(oMsg.type == messages.T_MAKE_A_MOVE && isPlayerA){
-          console.log("PLAYER A ROLLED, POSITION: "+ oMsg.data);
-          let msg = messages.O_MAKE_A_MOVE;
-          msg.data = oMsg.data;
-          currentGame.playerB.send(JSON.stringify(msg));
-        }else if(oMsg.type == messages.T_MAKE_A_MOVE && !isPlayerA){
-          console.log("PLAYER B ROLLED, POSITION: "+ oMsg.data);
-          let msg = messages.O_MAKE_A_MOVE;
-          msg.data = oMsg.data;
-          currentGame.playerA.send(JSON.stringify(msg));
-        }
-      }
-      if( oMsg.type == messages.T_GAME_WON_BY){
-        console.log("GAME WON BY: "+oMsg.data);
-        let winner = oMsg.data;
-        let winnerMsg = messages.O_GAME_OVER;
-        winnerMsg.data = winner;
-        currentGame.playerA.send(JSON.stringify(winnerMsg));
-        currentGame.playerB.send(JSON.stringify(winnerMsg));
-        //game was won by somebody, update statistics
-        gameStatus.gamesCompleted++;
-        won= true;
-      }     
-    });
-
+    
   
     con.on("close", function (code) {
       
@@ -135,8 +101,8 @@ wss.on("connection", function connection(ws){
                   console.log("Player B closing: " + e);
               }                
       }
+    });
            
-  });
 });
 
 

@@ -26,3 +26,7 @@ function checkCookie() {
     }
     document.getElementById("my_audio").play();
   }
+
+if (screen.height < 768 || screen.width < 1298) {
+  alert("Your screen size is a tad too small!");
+}

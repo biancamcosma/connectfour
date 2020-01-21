@@ -33,3 +33,11 @@
     margin-left: 10%;
     margin-top: 1%
   }
+
+#fs-toggle:not(:fullscreen) {
+  background-color: wheat;
+}
+
+#fs-toggle:fullscreen {
+  background-color: red;
+}
