@@ -17,7 +17,7 @@ function checkCookie() {
     if (access != "") {
       var num = parseInt(access, 10);
       num++;
-      document.getElementById("visits").innerHTML='<h3>You have visited this page '+num+' times</h3>';
+      document.getElementById("visits").innerHTML='<h3>You have visited this page '+num+' times.</h3>';
       document.cookie = "access="+num;
     } else {
        alert("Welcome for the first time!")
@@ -27,6 +27,6 @@ function checkCookie() {
     document.getElementById("my_audio").play();
   }
 
-if (screen.height < 768 || screen.width < 1298) {
-  alert("Your screen size is a tad too small!");
+if (screen.height < 900 || screen.length < 1200) {
+  alert("Your screen size may be a tad too small!");
 }

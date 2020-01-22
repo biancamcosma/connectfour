@@ -66,22 +66,22 @@ body, html {
 
 #whoseTurn::after {
     content: '';
+    position: absolute;
     height: 60px;
     width: 60px; 
     border-radius: 50%;
     background-color: yellowgreen;
-    position: absolute;
     left: 65%;
     top: 78%;
 }
 
 #whoseTurn::before {
     content: '';
+    position: absolute;
     height: 60px;
     width: 60px; 
     border-radius: 50%;
     background-color: gold;
-    position: absolute;
     left: 30.5%;
     top: 78%;
 }

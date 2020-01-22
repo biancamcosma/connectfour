@@ -4,6 +4,10 @@ body {
   background-color: black;
 }
 
+#button {
+  font-family: 'Lobster', cursive;
+}
+
 a {
   color: #00B7FF;
 }

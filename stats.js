@@ -4,4 +4,4 @@ var gameStatus = {
     gamesCompleted : 0      /* number of games successfully completed */
 };
 
-module.exports = gameStatus;
+module.exports = gameStatus; 

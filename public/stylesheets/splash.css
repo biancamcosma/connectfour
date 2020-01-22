@@ -1,43 +1,35 @@
+@import "style.css";
+
+main {
+    color: white;
+}
 .button {
-    background-color: yellow;
-    color: green;
-    width: 120px;
-    height: 60px;
+    background-color: black;
+    color: white;
+    border-radius: 0 20% 0 20%;
+    width: 200px;
+    height: 100px;
     text-align: center;
-    text-decoration: none;
+    font-size: 150%;
     display: inline-block;
-    font-size: 30px;
-    background-color: yellow;
-    border-radius: 8px;
-    border-color: green;
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
-    margin-left: 10%
   }
 
   .button:hover {
-    background-color:green; 
-    color: yellow;
-    border-color: yellow;
+    background-color: yellow; 
+    color: black;
+    border-color: whitesmoke;
   }
 
   #logo{
-      height: 400px;
+      background-image: url("../images/logo.png");
       position: absolute;
-      margin-left: 30%;
   }
 
-
   #visits{
-    color: green;
+    text-align: center;
+    color: white;
     margin-left: 10%;
     margin-top: 1%
   }
-
-#fs-toggle:not(:fullscreen) {
-  background-color: wheat;
-}
-
-#fs-toggle:fullscreen {
-  background-color: red;
-}
